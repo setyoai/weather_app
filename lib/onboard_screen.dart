@@ -10,9 +10,8 @@ class OnboardScreen extends StatelessWidget {
         decoration: const BoxDecoration(
             image: DecorationImage(
                 image: AssetImage('images/onboard.png'), fit: BoxFit.fill)),
-        child: Container(
-          margin: const EdgeInsets.only(right: 50, left: 50.0, bottom: 150.0),
-          alignment: Alignment.center,
+        child: Padding(
+          padding: const EdgeInsets.only(right: 50, left: 50.0, bottom: 150.0),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
