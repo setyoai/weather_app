@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/home_screen.dart';
 
 class OnboardScreen extends StatelessWidget {
   const OnboardScreen({super.key});
@@ -42,7 +43,9 @@ class OnboardScreen extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           color: Color(0xFF444E72)),
                       'Get Started'),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+                  },
                 )
               ]),
         ),

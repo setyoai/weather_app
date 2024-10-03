@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/home_screen.dart';
 import 'package:weather_app/onboard_screen.dart';
 
 void main() {
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: const OnboardScreen(),
     );
   }
 }
