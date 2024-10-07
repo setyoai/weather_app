@@ -31,7 +31,9 @@ class DetailWeather extends StatelessWidget {
                   IconButton(
                     color: Colors.white,
                     icon: const Icon(Icons.arrow_back_outlined),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                   ),
                   const SizedBox(height: 40),
                   Row(
