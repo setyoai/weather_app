@@ -31,7 +31,6 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Expanded(
             child: Container(
               decoration: const BoxDecoration(
                   gradient: LinearGradient(
@@ -151,7 +150,6 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ),
-      ),
     );
   }
 }
