@@ -16,16 +16,20 @@ class DetailWeather extends StatelessWidget {
           Color(0xff47BFDF),
           Color(0xff4A91FF),
         ]);
+
+    final Size screenSize = MediaQuery.of(context).size;
+    final double screenHeight = screenSize.height;
+    final double screenWidth = screenSize.width;
+
     return Scaffold(
       body: SafeArea(
         child: Stack(children: <Widget>[
           Container(
-            decoration: const BoxDecoration(
-              gradient: backgroundGradient
-            ),
+            height: screenHeight,
+            width: screenWidth,
+            decoration: const BoxDecoration(gradient: backgroundGradient),
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   const SizedBox(height: 30),
                   IconButton(
@@ -36,10 +40,10 @@ class DetailWeather extends StatelessWidget {
                     },
                   ),
                   const SizedBox(height: 40),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      const Text(
+                      Text(
                         'Next Forecast',
                         style: TextStyle(
                           shadows: [
@@ -49,31 +53,18 @@ class DetailWeather extends StatelessWidget {
                                 offset: Offset(-2.0, 3.0))
                           ],
                           fontFamily: 'Overpass',
-                          fontSize: 24.0,
+                          fontSize: 20.0,
                           fontWeight: FontWeight.w700,
                           color: Colors.white,
                         ),
                       ),
-                      Text(
-                        style: const TextStyle(
-                          shadows: [
-                            Shadow(
-                                blurRadius: 1.0, // shadow blur
-                                color: Color(0xff74B1DE), // shadow color
-                                offset: Offset(-2.0, 3.0))
-                          ],
-                          fontFamily: 'Overpass',
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.white,
-                        ),
-                        DateFormat('MMMMEEEEd').format(now),
-                      ),
                     ],
                   ),
                   const SizedBox(height: 50),
-                  const Expanded(
+                  Expanded(
                     child: WeatherListData(
+                      screenHeight: screenHeight,
+                      screenWidth: screenWidth,
                       backgroundGradient: backgroundGradient,
                     ),
                   ),
@@ -87,7 +78,15 @@ class DetailWeather extends StatelessWidget {
 
 class WeatherListData extends StatelessWidget {
   final LinearGradient backgroundGradient;
-  const WeatherListData({super.key, required this.backgroundGradient});
+  final double screenHeight;
+  final double screenWidth;
+
+  const WeatherListData({
+    super.key,
+    required this.backgroundGradient,
+    required this.screenHeight,
+    required this.screenWidth,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -97,8 +96,11 @@ class WeatherListData extends StatelessWidget {
         itemBuilder: (context, index) {
           final WeatherData weather = weatherDataList[index];
           return Container(
+            height: screenHeight *
+                0.15, // Set height sesuai layar (15% dari tinggi layar)
+            width: screenWidth, // Set width sesuai layar
             decoration: BoxDecoration(
-                  gradient: backgroundGradient,
+              gradient: backgroundGradient,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
