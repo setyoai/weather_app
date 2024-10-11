@@ -34,8 +34,6 @@ class HomeScreen extends StatelessWidget {
           children: <Widget>[
             Expanded(
               child: Container(
-                // height: MediaQuery.of(context).size.height,
-                // width: MediaQuery.of(context).size.width,
                 decoration: const BoxDecoration(
                     gradient: LinearGradient(
                         begin: Alignment.topRight,
@@ -156,7 +154,7 @@ class HomeScreen extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const DetailWeather(),
+                              builder: (context) => const DetailScreen(),
                             ),
                           );
                         },
