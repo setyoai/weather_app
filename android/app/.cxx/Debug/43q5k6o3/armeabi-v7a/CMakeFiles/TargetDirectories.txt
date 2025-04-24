@@ -1,0 +1,2 @@
+/home/setyo/bahasa_pemrograman/flutter/basic_flutter/weather_app/android/app/.cxx/Debug/43q5k6o3/armeabi-v7a/CMakeFiles/edit_cache.dir
+/home/setyo/bahasa_pemrograman/flutter/basic_flutter/weather_app/android/app/.cxx/Debug/43q5k6o3/armeabi-v7a/CMakeFiles/rebuild_cache.dir
