@@ -1,1 +1,0 @@
-/home/setyo/bahasa_pemrograman/flutter/basic_flutter/weather_app/build/app/intermediates/cxx/Debug/43q5k6o3/obj/arm64-v8a
